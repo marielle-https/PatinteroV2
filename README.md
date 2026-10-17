@@ -4,9 +4,6 @@ A browser version of the Filipino street game. Dodge the taggers on each line an
 
 **Stack:** HTML5, CSS3, Bootstrap 5 (CDN, CSS only) and vanilla JavaScript. No build step.
 
-## Run
-Open `index.html` in a browser (internet needed for Bootstrap and the font), or serve the folder: `python3 -m http.server` then visit http://localhost:8000.
-
 ## Controls
 - Desktop: Arrow keys / WASD (4 directions). `P` or `Esc` pauses.
 - Touch: on-screen joystick. Pause button at top right. The game auto-pauses on tab switch or window blur.
