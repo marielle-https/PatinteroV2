@@ -16,6 +16,3 @@ Level N has N taggers, one per line from the bottom. They slide along their line
 
 ## Testing
 Manual checklist: menu navigation, countdown, movement and bounds, tag → game over, crossing → next level, pause/resume/restart/menu, resize mid-game, window blur while holding a key, repeated Play/Restart (no duplicate loops), corrupted `localStorage`. See the status notes in the project hand-off for what was actually run.
-
-## Known limitations
-No audio. Sprite assets are from the original repo. Not yet verified in a real browser by the author of this refactor.
