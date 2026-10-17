@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Patintero</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+<main id="stage" aria-label="Patintero court">
+  <div id="hud" hidden>
+    <div><span id="hudName"></span><br>Level <span id="hudLevel">1</span>/5 · Score <span id="hudScore">0</span></div>
+    <button id="pauseBtn" class="btn btn-sm btn-warning" aria-label="Pause">❚❚</button>
+  </div>
+  <div id="finish" class="finish-line" hidden></div>
+  <div id="countdown" hidden aria-live="assertive"></div>
+  <div id="joystick" hidden aria-label="Virtual joystick"><div id="knob"></div></div>
+</main>
+<div id="overlay" class="overlay-card" role="dialog" aria-live="polite"></div>
+<script src="assets/js/game.js"></script>
+</body>
+</html>

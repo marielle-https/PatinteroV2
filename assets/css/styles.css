@@ -1,0 +1,32 @@
+:root{--px:2;--gold:#ffd23f;--red:#ce1126;--blue:#0038a8;--ink:#1b1b1b}
+html,body{height:100%;margin:0;overflow:hidden;touch-action:none;overscroll-behavior:none;user-select:none}
+body{font-family:"Press Start 2P",monospace,cursive;background:#222 url(../images/menu-bg.png) center/cover no-repeat}
+body.playing{background-image:url(../images/court.png)}
+#stage{position:fixed;inset:0}
+.overlay-card{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(92vw,560px);max-height:90vh;overflow:auto;
+  background:rgba(0,20,60,.82);border:4px solid var(--gold);border-radius:12px;padding:clamp(14px,4vw,28px);text-align:center;color:#fff;z-index:100}
+.overlay-card[hidden]{display:none}
+.overlay-card h2{color:var(--gold);font-size:clamp(16px,4.5vw,28px);text-shadow:3px 3px 0 var(--red)}
+.overlay-card p,.overlay-card li{font-size:clamp(9px,2.4vw,13px);line-height:1.8;text-align:left}
+.overlay-card .btn{font-family:inherit;font-size:clamp(10px,2.6vw,14px);margin:6px;padding:12px 18px;min-height:44px}
+.overlay-card input{font-family:inherit;text-align:center;font-size:14px;padding:10px;width:80%;border-radius:8px;border:2px solid #fff}
+#hud{position:fixed;top:max(8px,env(safe-area-inset-top));left:8px;right:8px;display:flex;justify-content:space-between;align-items:flex-start;
+  color:#fff;text-shadow:1px 1px 0 #000;font-size:clamp(8px,2.2vw,13px);line-height:1.8;z-index:50}
+#hud[hidden],#finish[hidden],#countdown[hidden],#joystick[hidden]{display:none}
+#countdown{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;font-size:20vmin;color:var(--gold);text-shadow:4px 4px 0 #000;z-index:60;pointer-events:none}
+#joystick{position:fixed;bottom:max(20px,env(safe-area-inset-bottom));left:20px;width:110px;height:110px;border-radius:50%;
+  background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);z-index:60;touch-action:none}
+#knob{position:absolute;top:50%;left:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:rgba(255,255,255,.8)}
+.finish-line{position:absolute;left:0;width:100%;height:6px;transform:translateY(-50%);background:linear-gradient(90deg,var(--red),var(--gold),#2e9e4f);
+  box-shadow:0 0 14px var(--gold);animation:glow 1.2s infinite alternate}
+@keyframes glow{from{opacity:.5}to{opacity:1}}
+.Character{position:absolute;width:calc(32px*var(--px));height:calc(32px*var(--px));overflow:hidden;transform:translate(-50%,-50%);pointer-events:none}
+.Character::before{content:"";position:absolute;left:25%;bottom:6%;width:50%;height:14%;border-radius:50%;background:rgba(0,0,0,.35)}
+.Character_spritesheet{position:absolute;left:0;top:0;width:calc(128px*var(--px));image-rendering:pixelated;animation:walk 1s steps(4) infinite;animation-play-state:paused}
+.Character.moving .Character_spritesheet{animation-play-state:running}
+.Character.player{filter:drop-shadow(0 0 4px var(--gold))}
+.face-down{top:0}.face-right{top:calc(-32px*var(--px))}.face-up{top:calc(-64px*var(--px))}.face-left{top:calc(-96px*var(--px))}
+@keyframes walk{to{transform:translate3d(-100%,0,0)}}
+.shake{animation:shake .3s}
+@keyframes shake{25%{transform:translate(-50%,-50%) translateX(-6px)}75%{transform:translate(-50%,-50%) translateX(6px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
